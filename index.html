@@ -4,114 +4,642 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <title>Andrea Tirelli - Mathematician, Computer Scientist & AI Governance Expert</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Andrea Tirelli - PhD in Mathematics, MSc in Computer Science. Expert in AI Governance, EU AI Act compliance, blockchain protocols, and machine learning applications.">
+    <meta name="keywords" content="Andrea Tirelli, mathematician, computer scientist, AI governance, EU AI Act, blockchain, machine learning, bioinformatics, theoretical physics">
+    <meta name="author" content="Andrea Tirelli">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atirelli.github.io/">
+    <meta property="og:title" content="Andrea Tirelli - Mathematician & AI Governance Expert">
+    <meta property="og:description" content="Expert in AI Governance, EU AI Act compliance, blockchain protocols, and machine learning applications. PhD Mathematics, MSc Computer Science.">
+    <meta property="og:image" content="https://atirelli.github.io/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://atirelli.github.io/">
+    <meta property="twitter:title" content="Andrea Tirelli - Mathematician & AI Governance Expert">
+    <meta property="twitter:description" content="Expert in AI Governance, EU AI Act compliance, blockchain protocols, and machine learning applications.">
+    <meta property="twitter:image" content="https://atirelli.github.io/profile.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="profile.jpg" as="image">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Andrea Tirelli",
+      "jobTitle": "Mathematician and Computer Scientist",
+      "description": "Expert in AI Governance, EU AI Act compliance, blockchain protocols, and machine learning applications",
+      "url": "https://atirelli.github.io/",
+      "sameAs": [
+        "https://github.com/ATirelli",
+        "https://scholar.google.com/citations?user=VbyLKOUAAAAJ&hl=en&oi=ao",
+        "https://www.scopus.com/authid/detail.uri?authorId=57275103700"
+      ],
+      "knowsAbout": [
+        "Mathematics",
+        "Computer Science",
+        "AI Governance",
+        "Machine Learning",
+        "Blockchain",
+        "EU AI Act",
+        "Type Theory"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "PhD in Mathematics"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "MSc in Computer Science"
+        }
+      ]
+    }
+    </script>
+
     <style>
+      :root {
+        --primary-color: #4a90e2;
+        --secondary-color: #2c5aa0;
+        --accent-color: #f39c12;
+        --text-color: #333;
+        --light-gray: #f8f9fa;
+        --medium-gray: #6c757d;
+        --border-radius: 12px;
+        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f5f5f5;
-        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: var(--text-color);
+        line-height: 1.6;
+        scroll-behavior: smooth;
       }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
       header {
-        background-color: #4a90e2;
-        padding: 2rem;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        padding: 3rem 0;
         text-align: center;
         color: white;
+        position: relative;
+        overflow: hidden;
       }
-      section {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 1rem 2rem;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="100" height="20"><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+        pointer-events: none;
       }
-      h1, h2 {
-        margin-top: 0;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem;
-        font-size: 0.9rem;
-        color: #777;
-      }
-      a {
-        color: #4a90e2;
-        text-decoration: none;
-      }
-  
-      /* Add it here */
+
       .profile-pic {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid white;
+        border: 6px solid white;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile-pic:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem 0;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+        backdrop-filter: blur(10px);
+      }
+
+      .social-link:hover {
+        background: white;
+        color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .main-content {
+        padding: 2rem 0;
+      }
+
+      section {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 2.5rem;
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      }
+
+      section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+      }
+
+      h1, h2 {
+        margin-top: 0;
+        color: var(--text-color);
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--light-gray);
+        position: relative;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background: var(--primary-color);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .skill-card {
+        padding: 1.5rem;
+        background: var(--light-gray);
+        border-radius: var(--border-radius);
+        text-align: center;
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+
+      .skill-card:hover {
+        background: white;
+        border-color: var(--primary-color);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow);
+      }
+
+      .skill-icon {
+        font-size: 2.5rem;
         margin-bottom: 1rem;
+        display: block;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li::before {
+        content: '▶';
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-size: 0.8rem;
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        border-bottom: 2px solid transparent;
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+        border-bottom-color: var(--accent-color);
+      }
+
+      .highlight {
+        background: linear-gradient(120deg, var(--accent-color) 0%, var(--accent-color) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.2em;
+        background-position: 0 88%;
+        transition: background-size 0.25s ease-in;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-align: center;
+        margin: 3rem auto;
+      }
+
+      .cta-section h2 {
+        color: white;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .cta-section h2::after {
+        background: white;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: var(--medium-gray);
+        background: white;
+        border-top: 1px solid #eee;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--box-shadow);
+        z-index: 1000;
+      }
+
+      .back-to-top:hover {
+        background: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          padding: 2rem 0;
+        }
+
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+        }
+
+        section {
+          margin: 1rem;
+          padding: 1.5rem;
+        }
+
+        .social-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .social-links {
+          gap: 0.5rem;
+        }
+
+        .social-link {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Animation for page load */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-scroll {
+        animation: fadeInUp 0.6s ease-out;
       }
     </style>
-  </head>
+</head>
+
 <body>
-
     <header>
-        <img src="profile.jpg" alt="Andrea Tirelli" class="profile-pic">
-        <h1>Hello, I'm Andrea Tirelli</h1>
-        <p>Mathematician • Computer Scientist • Problem Solver</p>
-      </header>
+        <div class="container">
+            <img src="profile.jpg" alt="Andrea Tirelli - Mathematician and Computer Scientist" class="profile-pic">
+            <h1>Andrea Tirelli</h1>
+            <p class="subtitle">I help organizations navigate the wild west of AI regulation while pondering the beauty of mathematical abstractions</p>
+            <div class="social-links">
+                <a href="https://github.com/ATirelli" class="social-link" target="_blank" rel="noopener">
+                    <span>🔬</span> Code
+                </a>
+                <a href="https://scholar.google.com/citations?user=VbyLKOUAAAAJ&hl=en&oi=ao" class="social-link" target="_blank" rel="noopener">
+                    <span>📚</span> Papers
+                </a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=57275103700" class="social-link" target="_blank" rel="noopener">
+                    <span>🎯</span> Citations
+                </a>
+                <a href="mailto:atirellimate@gmail.com" class="social-link">
+                    <span>💬</span> Chat
+                </a>
+            </div>
+        </div>
+    </header>
 
-<section>
-  <h2>About Me</h2>
-  <p>
-    I'm passionate about exploring the intersection of mathematics, computer science, and real-world problem-solving.
-    I hold a BSc, an MSc and a PhD in Mathematics and a MSc in Computer Science. I have experience working with Machine Learning applications to Bioinformatics, Theoretical Physics and Insurance. More recently, I have been focused developing best practices for AI Conformity Assessments and AI Governance.
-  </p>
-</section>
+    <main class="main-content">
+        <div class="container">
+            <section class="animate-on-scroll">
+                <h2>The Story So Far</h2>
+                <p>
+                    Picture this: someone who fell in love with the elegance of <span class="highlight">pure mathematics</span> but couldn't resist the allure of making computers do impossible things. That's me in a nutshell.
+                </p>
+                <p>
+                    My journey started in the abstract world of mathematical theory (PhD and all), but I got seduced by the practical power of computation. Now I spend my days in the fascinating intersection where theoretical rigor meets real-world chaos—especially when that chaos involves AI regulation.
+                </p>
+                <p>
+                    These days, I'm the person organizations call when they're drowning in <strong>EU AI Act</strong> compliance documents and need someone who actually understands both the technical depth and the mathematical foundations of what we're trying to regulate.
+                </p>
+            </section>
 
-<section>
-  <h2>What I Do</h2>
-  <ul>
-    <li>Developing solutions for <strong>AI management systems</strong> and technical conformity assessments.</li>
-    <li>Researching and prototyping with <strong>LLMs</strong> to automate knowledge extraction.</li>
-    <li>Working on applied data science, from prediction models to dataset design.</li>
-    <li>Exploring more theoretical topics like <strong>type theory</strong> and <strong>programming languages</strong>.</li>
-  </ul>
-</section>
+            <section class="animate-on-scroll">
+                <h2>What I Actually Do (When I'm Not Down Rabbit Holes)</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <span class="skill-icon">🎭</span>
+                        <h3>AI Compliance Whisperer</h3>
+                        <p>I translate the EU AI Act from bureaucratic maze into something engineers can actually implement without losing their sanity</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">🧬</span>
+                        <h3>Cross-Domain Alchemist</h3>
+                        <p>Mixing machine learning with biology, physics, and insurance—because why stick to one field when you can confuse people in three?</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">⛓️</span>
+                        <h3>Protocol Archaeologist</h3>
+                        <p>Digging into blockchain protocols with formal methods, because someone needs to prove these things actually work</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">🎯</span>
+                        <h3>Type Theory Explorer</h3>
+                        <p>Making programming languages behave better through the power of mathematical foundations (and occasional frustration)</p>
+                    </div>
+                </div>
+            </section>
 
-<section>
-  <h2>Current Projects</h2>
-  <ul>
-    <li>Carrying out research activities on formal specification of Blockchain protocols.</li>
-    <li>Supporting AI conformity assessment frameworks for AI governance within the scope of the EU AI Act.</li>
-    <li>Supporting audit frameworks for AI governance (ISO/IEC 42001).</li>
-  </ul>
-</section>
+            <section class="animate-on-scroll">
+                <h2>Current Obsessions & Projects</h2>
+                <ul>
+                    <li><strong>Making AI Audits Less Terrible:</strong> Building frameworks that don't make compliance officers want to quit their jobs (ongoing challenge)</li>
+                    <li><strong>Teaching LLMs to Extract Knowledge:</strong> Because apparently we need machines to read the papers we don't have time to read ourselves</li>
+                    <li><strong>Blockchain Formal Specs:</strong> Proving that decentralized systems actually work as advertised (spoiler: it's complicated)</li>
+                    <li><strong>Type System Archaeology:</strong> Exploring how mathematical foundations can save us from programming language chaos</li>
+                    <li><strong>ISO 42001 Reality Check:</strong> Making AI management standards work in the real world, not just on paper</li>
+                </ul>
+            </section>
 
-<section>
-  <h2>Publications</h2>
-  <p>
-    If you'd like to read more about my work, you can check out my publications on <a href="https://scholar.google.com/citations?user=VbyLKOUAAAAJ&hl=en&oi=ao">Google Scholar</a> or <a href="https://www.scopus.com/authid/detail.uri?authorId=57275103700">Scopus</a>.
-  </p>
-</section>
+            <section class="animate-on-scroll">
+                <h2>The Academic Journey (Or: How I Collected Degrees)</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #4a90e2;">
+                        <h4 style="margin-top: 0; color: #4a90e2;">The Pure Math Phase</h4>
+                        <p><strong>PhD in Mathematics</strong> • Where I learned that "trivial" means "I spent 3 months figuring this out"<br>
+                        <strong>MSc in Mathematics</strong> • Fell in love with abstraction<br>
+                        <strong>BSc in Mathematics</strong> • Where it all began</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #f39c12;">
+                        <h4 style="margin-top: 0; color: #f39c12;">The Reality Check</h4>
+                        <p><strong>MSc in Computer Science</strong><br>
+                        Discovered that computers are much less elegant than mathematical proofs, but infinitely more useful for paying rent</p>
+                    </div>
+                </div>
+            </section>
 
-<section>
-  <h2>Beyond Work</h2>
-  <p>
-    When I'm not deep in code or theory, you might find me organizing creative events like treasure hunts, navigating the challenges of city life, or experimenting with personal productivity hacks.
-  </p>
-</section>
+            <section class="cta-section animate-on-scroll">
+                <h2>Papers & Digital Breadcrumbs</h2>
+                <p>
+                    Want to see what happens when mathematical rigor meets regulatory chaos? My papers are scattered across the internet like a very academic treasure hunt.
+                </p>
+                <p>
+                    Check out my work on <a href="https://scholar.google.com/citations?user=VbyLKOUAAAAJ&hl=en&oi=ao" style="color: white; border-bottom-color: white;" target="_blank" rel="noopener">Google Scholar</a>
+                    or <a href="https://www.scopus.com/authid/detail.uri?authorId=57275103700" style="color: white; border-bottom-color: white;" target="_blank" rel="noopener">Scopus</a>—where I document my attempts to make sense of AI governance, blockchain protocols, and why type theory matters.
+                </p>
+            </section>
 
-<section>
-  <h2>Contact</h2>
-  <p>
-    Let's connect! You can find me on <a href="https://github.com/ATirelli">GitHub</a>
-    or reach out via <a href="mailto:[atirellimate@gmail.com]">email</a>.
-  </p>
-</section>
+            <section class="animate-on-scroll">
+                <h2>When I'm Not Staring at Equations</h2>
+                <p>
+                    Plot twist: I'm not always buried in code or lost in mathematical abstractions. Sometimes I surface for air and do surprisingly human things:
+                </p>
+                <ul>
+                    <li><strong>Treasure Hunt Architect:</strong> I design elaborate treasure hunts because apparently solving complex problems for fun is my idea of relaxation</li>
+                    <li><strong>Urban Complexity Observer:</strong> Fascinated by how cities work (or don't work) and the emergent patterns in metropolitan chaos</li>
+                    <li><strong>Productivity System Experimenter:</strong> Always tweaking my workflow because if you can optimize an AI system, why not optimize your life?</li>
+                    <li><strong>Philosophy of Science Wanderer:</strong> Pondering what we actually know and how we know we know it (meta-mathematical existential crises included)</li>
+                    <li><strong>Open Source Contributor:</strong> Because the best way to procrastinate on research is to fix someone else's code</li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-style: italic; opacity: 0.8;">
+                    Fun fact: I once spent three weeks designing a treasure hunt that required participants to solve differential equations to find the next clue. Nobody complained, which either says something about my friends or my ability to make math fun.
+                </p>
+            </section>
 
-<footer>
-  &copy; 2025 Andrea Tirelli. All rights reserved.
-</footer>
+            <section class="animate-on-scroll">
+                <h2>Want to Talk Shop?</h2>
+                <p>
+                    I love talking to interesting people about interesting problems. Whether you're:
+                </p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li>🔥 Drowning in AI compliance requirements and need someone who actually gets it</li>
+                    <li>🤔 Working on something at the intersection of theory and practice</li>
+                    <li>🚀 Building tools that need mathematical rigor but also have to work in the real world</li>
+                    <li>📚 Curious about how formal methods can solve actual problems</li>
+                    <li>☕ Just want to chat about the philosophical implications of type theory over coffee</li>
+                </ul>
+                <p>
+                    Drop me a line. I promise to respond with actual insights, not consultant-speak.
+                </p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="mailto:atirellimate@gmail.com" style="display: inline-block; padding: 1rem 2rem; background: #4a90e2; color: white; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">
+                        Let's solve something together →
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Andrea Tirelli. Made with equal parts mathematical precision and caffeinated chaos.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
+        ↑
+    </button>
+
+    <script>
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Hide back to top button initially
+        document.querySelector('.back-to-top').style.display = 'none';
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Lazy load images and optimize performance
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for older browsers
+            const script = document.createElement('script');
+            script.src = 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver';
+            document.head.appendChild(script);
+        }
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Monitor Core Web Vitals
+            if ('PerformanceObserver' in window) {
+                const observer = new PerformanceObserver((list) => {
+                    for (const entry of list.getEntries()) {
+                        console.log(`${entry.name}: ${entry.value}`);
+                    }
+                });
+                observer.observe({entryTypes: ['measure', 'navigation']});
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://atirelli.github.io/sitemap.xml
+
+# Allow all crawlers to index the site
+# This site contains academic and professional information
+# about Andrea Tirelli's work in mathematics, computer science,
+# and AI governance
