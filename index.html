@@ -1,6 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<head></head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .night-mode {
+      background-color: #333;
+      color: #f5f5f5;
+    }
+    .night-mode header {
+      background-color: #222;
+    }
+    .night-mode section {
+      background-color: #444;
+      color: #f5f5f5;
+    }
+    body.night-mode {
+      background-color: #333;
+      color: #f5f5f5;
+    }
+    .night-mode footer {
+      background-color: #222;
+      color: #f5f5f5;
+    }
+    .toggle-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: white;
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleIcon = document.createElement('i');
+    toggleIcon.classList.add('fas', 'fa-moon', 'toggle-icon');
+    document.body.appendChild(toggleIcon);
 
+    toggleIcon.addEventListener('click', () => {
+      document.body.classList.toggle('night-mode');
+      toggleIcon.classList.toggle('fa-moon');
+      toggleIcon.classList.toggle('fa-sun');
+    });
+  });
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
