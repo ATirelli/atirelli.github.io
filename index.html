@@ -1,50 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    .night-mode {
-      background-color: #333;
-      color: #f5f5f5;
-    }
-    .night-mode header {
-      background-color: #222;
-    }
-    .night-mode section {
-      background-color: #444;
-      color: #f5f5f5;
-    }
-    body.night-mode {
-      background-color: #333;
-      color: #f5f5f5;
-    }
-    .night-mode footer {
-      background-color: #222;
-      color: #f5f5f5;
-    }
-    .toggle-icon {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: white;
-    }
-  </style>
-</head>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleIcon = document.createElement('i');
-    toggleIcon.classList.add('fas', 'fa-moon', 'toggle-icon');
-    document.body.appendChild(toggleIcon);
 
-    toggleIcon.addEventListener('click', () => {
-      document.body.classList.toggle('night-mode');
-      toggleIcon.classList.toggle('fa-moon');
-      toggleIcon.classList.toggle('fa-sun');
-    });
-  });
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,20 +16,20 @@
     <meta property="og:url" content="https://atirelli.github.io/">
     <meta property="og:title" content="Andrea Tirelli - Mathematician & AI Governance Expert">
     <meta property="og:description" content="Expert in AI Governance, EU AI Act compliance, blockchain protocols, and machine learning applications. PhD Mathematics, MSc Computer Science.">
-    <meta property="og:image" content="https://atirelli.github.io/profile.jpg">
+    <meta property="og:image" content="https://atirelli.github.io/profile.jpg?v=2025.01">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://atirelli.github.io/">
     <meta property="twitter:title" content="Andrea Tirelli - Mathematician & AI Governance Expert">
     <meta property="twitter:description" content="Expert in AI Governance, EU AI Act compliance, blockchain protocols, and machine learning applications.">
-    <meta property="twitter:image" content="https://atirelli.github.io/profile.jpg">
+    <meta property="twitter:image" content="https://atirelli.github.io/profile.jpg?v=2025.01">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="profile.jpg" as="image">
+    <link rel="preload" href="profile.jpg?v=2025.01" as="image">
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -113,15 +69,50 @@
 
     <style>
       :root {
-        --primary-color: #4a90e2;
-        --secondary-color: #2c5aa0;
-        --accent-color: #f39c12;
-        --text-color: #333;
-        --light-gray: #f8f9fa;
-        --medium-gray: #6c757d;
+        /* Light mode colors - Sophisticated palette */
+        --primary-color: #2d5aa0;
+        --secondary-color: #1e3a8a;
+        --accent-color: #dc2626;
+        --accent-secondary: #059669;
+        --accent-tertiary: #7c3aed;
+        --warm-accent: #ea580c;
+        --text-color: #1f2937;
+        --text-secondary: #4b5563;
+        --light-gray: #f8fafc;
+        --medium-gray: #64748b;
+        --bg-color: #ffffff;
+        --section-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --gradient-start: #3b82f6;
+        --gradient-end: #1d4ed8;
+        --card-hover: #f1f5f9;
+
+        /* Common variables */
         --border-radius: 12px;
-        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        --box-shadow: 0 4px 16px var(--shadow-color);
         --transition: all 0.3s ease;
+      }
+
+      /* Dark mode colors - Rich, warm palette */
+      [data-theme="dark"] {
+        --primary-color: #f59e0b;
+        --secondary-color: #d97706;
+        --accent-color: #ef4444;
+        --accent-secondary: #10b981;
+        --accent-tertiary: #8b5cf6;
+        --warm-accent: #f97316;
+        --text-color: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --light-gray: #374151;
+        --medium-gray: #9ca3af;
+        --bg-color: #0f172a;
+        --section-bg: #1e293b;
+        --border-color: #475569;
+        --shadow-color: rgba(0, 0, 0, 0.4);
+        --gradient-start: #f59e0b;
+        --gradient-end: #d97706;
+        --card-hover: #334155;
       }
 
       * {
@@ -132,10 +123,50 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: var(--bg-color);
         color: var(--text-color);
         line-height: 1.6;
         scroll-behavior: smooth;
+        transition: var(--transition);
+      }
+
+      /* Update background gradients for dark mode */
+      body:not([data-theme="dark"]) {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+        position: relative;
+      }
+
+      body:not([data-theme="dark"])::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(circle at 25% 25%, rgba(45, 90, 160, 0.04) 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      [data-theme="dark"] body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        position: relative;
+      }
+
+      [data-theme="dark"] body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
       }
 
       .container {
@@ -144,8 +175,34 @@
         padding: 0 1rem;
       }
 
+      /* Theme toggle button */
+      .theme-toggle {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--box-shadow);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.1);
+        background: var(--secondary-color);
+      }
+
       header {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
         padding: 3rem 0;
         text-align: center;
         color: white;
@@ -232,7 +289,7 @@
         max-width: 900px;
         margin: 2rem auto;
         padding: 2.5rem;
-        background: white;
+        background: var(--section-bg);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
         position: relative;
@@ -242,7 +299,7 @@
 
       section:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 32px var(--shadow-color);
       }
 
       section::before {
@@ -255,6 +312,19 @@
         background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
       }
 
+      /* Vary section accent colors */
+      section:nth-child(odd)::before {
+        background: linear-gradient(to bottom, var(--primary-color), var(--accent-secondary));
+      }
+
+      section:nth-child(even)::before {
+        background: linear-gradient(to bottom, var(--accent-color), var(--accent-tertiary));
+      }
+
+      section:nth-child(3n)::before {
+        background: linear-gradient(to bottom, var(--accent-secondary), var(--warm-accent));
+      }
+
       h1, h2 {
         margin-top: 0;
         color: var(--text-color);
@@ -264,7 +334,7 @@
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
         padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--light-gray);
+        border-bottom: 2px solid var(--border-color);
         position: relative;
       }
 
@@ -292,13 +362,94 @@
         text-align: center;
         transition: var(--transition);
         border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skill-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primary-color);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .skill-card:hover::before {
+        transform: scaleX(1);
       }
 
       .skill-card:hover {
-        background: white;
+        background: var(--card-hover);
         border-color: var(--primary-color);
         transform: translateY(-3px);
         box-shadow: var(--box-shadow);
+      }
+
+      /* Individual card color variants */
+      .skill-card:nth-child(1) {
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .skill-card:nth-child(1):hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 8px 25px rgba(45, 90, 160, 0.15);
+      }
+
+      .skill-card:nth-child(2) {
+        border-left: 4px solid var(--accent-color);
+      }
+
+      .skill-card:nth-child(2):hover {
+        border-color: var(--accent-color);
+        box-shadow: 0 8px 25px rgba(220, 38, 38, 0.15);
+      }
+
+      .skill-card:nth-child(3) {
+        border-left: 4px solid var(--accent-secondary);
+      }
+
+      .skill-card:nth-child(3):hover {
+        border-color: var(--accent-secondary);
+        box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+      }
+
+      .skill-card:nth-child(4) {
+        border-left: 4px solid var(--accent-tertiary);
+      }
+
+      .skill-card:nth-child(4):hover {
+        border-color: var(--accent-tertiary);
+        box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+      }
+
+      [data-theme="dark"] .skill-card:nth-child(1):hover {
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+      }
+
+      [data-theme="dark"] .skill-card:nth-child(2):hover {
+        box-shadow: 0 8px 25px rgba(239, 68, 68, 0.2);
+      }
+
+      [data-theme="dark"] .skill-card:nth-child(3):hover {
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+      }
+
+      [data-theme="dark"] .skill-card:nth-child(4):hover {
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+      }
+
+      .skill-card h3 {
+        color: var(--text-color);
+        margin: 0.5rem 0;
+      }
+
+      .skill-card p {
+        color: var(--medium-gray);
+        margin: 0;
       }
 
       .skill-icon {
@@ -314,7 +465,7 @@
 
       li {
         padding: 0.75rem 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--border-color);
         position: relative;
         padding-left: 2rem;
       }
@@ -331,6 +482,19 @@
         font-size: 0.8rem;
       }
 
+      /* Vary bullet colors */
+      li:nth-child(2n)::before {
+        color: var(--accent-color);
+      }
+
+      li:nth-child(3n)::before {
+        color: var(--accent-secondary);
+      }
+
+      li:nth-child(4n)::before {
+        color: var(--accent-tertiary);
+      }
+
       a {
         color: var(--primary-color);
         text-decoration: none;
@@ -345,18 +509,45 @@
       }
 
       .highlight {
-        background: linear-gradient(120deg, var(--accent-color) 0%, var(--accent-color) 100%);
+        background: linear-gradient(120deg, var(--accent-secondary) 0%, var(--accent-secondary) 100%);
         background-repeat: no-repeat;
         background-size: 100% 0.2em;
         background-position: 0 88%;
         transition: background-size 0.25s ease-in;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+
+      .highlight:hover {
+        background-size: 100% 100%;
+        color: white;
+        padding: 0 0.2em;
+        border-radius: 4px;
       }
 
       .cta-section {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
         color: white;
         text-align: center;
         margin: 3rem auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
       }
 
       .cta-section h2 {
@@ -368,13 +559,23 @@
         background: white;
       }
 
+      .cta-section a {
+        color: white;
+        border-bottom-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .cta-section a:hover {
+        color: rgba(255, 255, 255, 0.9);
+        border-bottom-color: white;
+      }
+
       footer {
         text-align: center;
         padding: 2rem;
         font-size: 0.9rem;
         color: var(--medium-gray);
-        background: white;
-        border-top: 1px solid #eee;
+        background: var(--section-bg);
+        border-top: 1px solid var(--border-color);
       }
 
       .back-to-top {
@@ -391,7 +592,7 @@
         cursor: pointer;
         transition: var(--transition);
         box-shadow: var(--box-shadow);
-        z-index: 1000;
+        z-index: 999;
       }
 
       .back-to-top:hover {
@@ -401,6 +602,14 @@
 
       /* Responsive Design */
       @media (max-width: 768px) {
+        .theme-toggle {
+          top: 1rem;
+          right: 1rem;
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
+        }
+
         header {
           padding: 2rem 0;
         }
@@ -459,13 +668,23 @@
       .animate-on-scroll {
         animation: fadeInUp 0.6s ease-out;
       }
+
+      /* Smooth transitions for theme switching */
+      * {
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      }
     </style>
 </head>
 
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        🌙
+    </button>
+
     <header>
         <div class="container">
-            <img src="profile.jpg" alt="Andrea Tirelli - Mathematician and Computer Scientist" class="profile-pic">
+            <img src="profile.jpg?v=2025.01" alt="Andrea Tirelli - Mathematician and Computer Scientist" class="profile-pic">
             <h1>Andrea Tirelli</h1>
             <p class="subtitle">I help organizations navigate the wild west of AI regulation while pondering the beauty of mathematical abstractions</p>
             <div class="social-links">
@@ -540,14 +759,14 @@
             <section class="animate-on-scroll">
                 <h2>The Academic Journey (Or: How I Collected Degrees)</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #4a90e2;">
-                        <h4 style="margin-top: 0; color: #4a90e2;">The Pure Math Phase</h4>
+                    <div style="padding: 1.5rem; background: var(--light-gray); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                        <h4 style="margin-top: 0; color: var(--primary-color);">The Pure Math Phase</h4>
                         <p><strong>PhD in Mathematics</strong> • Where I learned that "trivial" means "I spent 3 months figuring this out"<br>
                         <strong>MSc in Mathematics</strong> • Fell in love with abstraction<br>
                         <strong>BSc in Mathematics</strong> • Where it all began</p>
                     </div>
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #f39c12;">
-                        <h4 style="margin-top: 0; color: #f39c12;">The Reality Check</h4>
+                    <div style="padding: 1.5rem; background: var(--light-gray); border-radius: 12px; border-left: 4px solid var(--accent-color);">
+                        <h4 style="margin-top: 0; color: var(--accent-color);">The Reality Check</h4>
                         <p><strong>MSc in Computer Science</strong><br>
                         Discovered that computers are much less elegant than mathematical proofs, but infinitely more useful for paying rent</p>
                     </div>
@@ -560,8 +779,8 @@
                     Want to see what happens when mathematical rigor meets regulatory chaos? My papers are scattered across the internet like a very academic treasure hunt.
                 </p>
                 <p>
-                    Check out my work on <a href="https://scholar.google.com/citations?user=VbyLKOUAAAAJ&hl=en&oi=ao" style="color: white; border-bottom-color: white;" target="_blank" rel="noopener">Google Scholar</a>
-                    or <a href="https://www.scopus.com/authid/detail.uri?authorId=57275103700" style="color: white; border-bottom-color: white;" target="_blank" rel="noopener">Scopus</a>—where I document my attempts to make sense of AI governance, blockchain protocols, and why type theory matters.
+                    Check out my work on <a href="https://scholar.google.com/citations?user=VbyLKOUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+                    or <a href="https://www.scopus.com/authid/detail.uri?authorId=57275103700" target="_blank" rel="noopener">Scopus</a>—where I document my attempts to make sense of AI governance, blockchain protocols, and why type theory matters.
                 </p>
             </section>
 
@@ -598,7 +817,7 @@
                     Drop me a line. I promise to respond with actual insights, not consultant-speak.
                 </p>
                 <div style="text-align: center; margin-top: 2rem;">
-                    <a href="mailto:atirellimate@gmail.com" style="display: inline-block; padding: 1rem 2rem; background: #4a90e2; color: white; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">
+                    <a href="mailto:atirellimate@gmail.com" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">
                         Let's solve something together →
                     </a>
                 </div>
@@ -617,6 +836,31 @@
     </button>
 
     <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+
+        // Update button text based on current theme
+        function updateThemeButton() {
+            const theme = body.getAttribute('data-theme');
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        updateThemeButton();
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButton();
+        });
+
         // Show/hide back to top button
         window.addEventListener('scroll', function() {
             const backToTop = document.querySelector('.back-to-top');
@@ -652,23 +896,14 @@
             });
         });
 
-        // Lazy load images and optimize performance
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            // Fallback for older browsers
-            const script = document.createElement('script');
-            script.src = 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver';
-            document.head.appendChild(script);
-        }
-
         // Add keyboard navigation for accessibility
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+            // Toggle theme with 'T' key
+            if (e.key === 't' || e.key === 'T') {
+                themeToggle.click();
             }
         });
 
